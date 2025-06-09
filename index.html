@@ -1,57 +1,66 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Recordatorio de Tareas</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bath App 🛁</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="contenedor">
-    <h1> 🫧 Bath App! </h1>
-    
-    <div id="pregunta-dia">
-      <p>¿Qué día necesitas recordar?</p>
-      <select id="select-dia">
-        <option value="" selected disabled>Selecciona un día</option>
-        <option value="0">Domingo</option>
-        <option value="1">Lunes</option>
-        <option value="2">Martes</option>
-        <option value="3">Miércoles</option>
-        <option value="4">Jueves</option>
-        <option value="5">Viernes</option>
-        <option value="6">Sábado</option>
-      </select>
+    <div class="app-container">
+        <!-- Pantalla de Bienvenida -->
+        <div id="welcome-screen" class="screen active">
+            <div class="header">
+                <h1>Bath App</h1>
+                <p class="subtitle">Tu recordatorio personal</p>
+            </div>
+            <div class="content">
+                <p>¿Qué día quieres recordar?</p>
+                <select id="day-selector" class="form-select">
+                    <option value="" disabled selected>Selecciona un día</option>
+                    <option value="lunes">Lunes</option>
+                    <option value="martes">Martes</option>
+                    <option value="miércoles">Miércoles</option>
+                    <option value="jueves">Jueves</option>
+                    <option value="viernes">Viernes</option>
+                    <option value="sábado">Sábado</option>
+                    <option value="domingo">Domingo</option>
+                </select>
+                <button id="next-btn-1" class="btn primary">Continuar</button>
+            </div>
+        </div>
+
+        <!-- Pantalla de Duración -->
+        <div id="duration-screen" class="screen">
+            <div class="header">
+                <h1>Bath App</h1>
+                <p class="subtitle">Configura tu recordatorio</p>
+            </div>
+            <div class="content">
+                <p>¿Por cuántos días quieres recordarlo?</p>
+                <select id="days-count" class="form-select">
+                    <option value="" disabled selected>Selecciona cantidad</option>
+                    <!-- Las opciones se generarán con JavaScript -->
+                </select>
+                <button id="next-btn-2" class="btn primary">Confirmar</button>
+            </div>
+        </div>
+
+        <!-- Pantalla de Confirmación -->
+        <div id="confirmation-screen" class="screen">
+            <div class="header">
+                <h1>Bath App</h1>
+                <p class="subtitle">¡Todo listo!</p>
+            </div>
+            <div class="content">
+                <div class="confirmation-icon">✓</div>
+                <p id="confirmation-message"></p>
+                <button id="start-btn" class="btn success">Comenzar</button>
+            </div>
+        </div>
     </div>
 
-    <div id="pregunta-cantidad" class="oculto">
-      <p>¿Cuántas veces necesitas recordarlo?</p>
-      <select id="select-cantidad">
-        <option value="" selected disabled>Selecciona una cantidad</option>
-      </select>
-    </div>
-
-    <div id="confirmacion" class="oculto">
-      <p>✅ ¡Listo! Tu recordatorio ha sido configurado.</p>
-      <button id="empezar">Empezar</button>
-    </div>
-  </div>
-
-  <script src="main.js"></script>
-
-  <section id="pantalla-configuracion">
-    
-  </section>
-  <section id="pantalla-recordatorio" class="oculto">
-  <h2 id="mensaje-dia"></h2>
-  <div id="pregunta-tarea" class="oculto">
-    <p id="mensaje-tarea"></p>
-    <button id="btn-si">Sí</button>
-    <button id="btn-no">No</button>
-    <p id="contador-restante" class="oculto"></p>
-  </div>
-</section>
-
-
+    <script src="app.js"></script>
 </body>
 </html>

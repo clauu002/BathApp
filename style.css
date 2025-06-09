@@ -1,70 +1,158 @@
+/* Reset y estilos base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-  font-family: 'Segoe UI', sans-serif;
-  background-color: #101112;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
 }
 
-.contenedor {
-  background-color: rgb(183, 208, 243);
-  background-image: url('https://img1.picmix.com/output/stamp/normal/8/7/4/3/1503478_90f47.gif');
-  padding: 2rem;
-  border-radius: 1rem;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-  max-width: 300px;
-  width: 100%;
-  text-align: center;
-  text-decoration-color: #f0f8ff;
+.app-container {
+    width: 100%;
+    max-width: 400px;
+    background: rgba(255, 255, 255, 0.1);
+    background-image: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/37294cd9-5161-4214-b12f-478c9d187318/da6odvc-50699665-e4d0-4dc0-ae06-095f5beda8df.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzM3Mjk0Y2Q5LTUxNjEtNDIxNC1iMTJmLTQ3OGM5ZDE4NzMxOFwvZGE2b2R2Yy01MDY5OTY2NS1lNGQwLTRkYzAtYWUwNi0wOTVmNWJlZGE4ZGYuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.b5QJr-__MXbZRttpSic7FAjVM9TpHRHMgRMSSL2cSuc');
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
 }
 
-
-select, button {
-  padding: 0.5rem;
-  margin-top: 1rem;
-  width: 100%;
-  border-radius: 8px;
-  border: 1px solid #ccc;
+.screen {
+    display: none;
+    padding: 30px;
+    transition: all 0.5s ease;
 }
 
-button {
-  background-color: #ffffff;
-  color: rgb(34, 185, 222);
-  font-weight: bold;
-  cursor: pointer;
+.screen.active {
+    display: block;
 }
 
-/* Ya existente */
-.oculto {
-  display: none;
-  opacity: 0;
-  transition: opacity 0.5s ease;
+.header {
+    text-align: center;
+    margin-bottom: 30px;
 }
 
-/* Animación de entrada */
-.fade-in {
-  animation: fadeIn 0.6s ease-in forwards;
+.header h1 {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 5px;
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: scale(0.98); }
-  to { opacity: 1; transform: scale(1); }
+.subtitle {
+    font-size: 14px;
+    opacity: 0.8;
 }
 
-
-/* Animación de salida */
-.fade-out {
-  opacity: 0;
-  animation: fadeOut 0.5s ease forwards;
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to   { opacity: 1; }
+.content p {
+    text-align: center;
+    font-size: 16px;
 }
 
-@keyframes fadeOut {
-  from { opacity: 1; }
-  to   { opacity: 0; }
+.form-select {
+    width: 100%;
+    padding: 12px 15px;
+    border: none;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.9);
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    color: #333;
+    appearance: none;
+    outline: none;
+}
+
+.btn {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn.primary {
+    background: #fff;
+    color: #667eea;
+}
+
+.btn.success {
+    background: #4ade80;
+    color: #fff;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.confirmation-icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 20px;
+    background: #4ade80;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+#confirmation-message {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+/* Estilos adicionales */
+.button-group {
+    display: flex;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.btn.danger {
+    background: #f87171;
+    color: white;
+}
+
+#status-message {
+    margin: 20px 0;
+    font-size: 18px;
+    min-height: 24px;
+}
+
+#days-remaining {
+    font-weight: 600;
+    font-size: 20px;
+    color: #4ade80;
+}
+
+.btn.exit {
+    background: turquoise
+    color: #fff;
+    border: 2px solid #fff;
+    margin-top: 20px;
+}
+
+.btn.exit:hover {
+    background: rgba(122, 186, 124, 0.1);
 }

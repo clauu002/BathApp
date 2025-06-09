@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bath App - Recordatorio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <div id="main-screen" class="screen active">
+            <div class="header">
+                <h1>¡Bienvenido!</h1>
+                <p class="subtitle" id="day-message"></p>
+            </div>
+            <div class="content">
+                <!-- Mensaje dinámico -->
+                <div id="task-container" style="display: none;">
+                    <p>¿Hiciste tu tarea hoy?</p>
+                    <div class="button-group">
+                        <button id="btn-yes" class="btn success">Sí ✅</button>
+                        <button id="btn-no" class="btn danger">No ❌</button>
+                    </div>
+                </div>
+                <div id="result-message"></div>
+                <!-- Dentro de <div class="content">, después del div#result-message -->
+                <button id="btn-exit" class="btn exit" style="display: none;">Salir 🚪</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
